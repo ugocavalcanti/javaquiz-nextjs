@@ -1,10 +1,37 @@
 import styled from 'styled-components'
+import db from "../db.json"
+import BackgroundQuiz from "../src/components/BackgroundQuiz"
+import ContainerQuiz from '../src/components/ContainerQuiz'
+import LogoQuiz from '../src/components/LogoQuiz'
+import CardQuiz from '../src/components/CardQuiz'
+import Footer from '../src/components/Footer'
+import GitHubCorner from '../src/components/GitHubCorner'
 
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
-`
 
 export default function Home() {
-  return <Title>My page</Title>
+  return (
+  <BackgroundQuiz backgroundImage={db.bg}>
+    <ContainerQuiz>
+      <LogoQuiz />
+      <CardQuiz>
+        <CardQuiz.Header>
+          <h1>{db.title}</h1>
+        </CardQuiz.Header>
+        <CardQuiz.Content>
+          <p>{db.description}</p>
+        </CardQuiz.Content>
+      </CardQuiz>
+      <CardQuiz>
+        <CardQuiz.Header>
+          <h1>{db.title}</h1>
+        </CardQuiz.Header>
+        <CardQuiz.Content>
+          <p>{db.description}</p>
+        </CardQuiz.Content>
+      </CardQuiz>
+      <Footer />
+    </ContainerQuiz>
+    <GitHubCorner projectUrl="https://github.com/ugocavalcanti" />
+  </BackgroundQuiz>
+  )
 }
