@@ -33,7 +33,7 @@ export default function Home() {
         </CardQuiz>
         <Footer />
       </ContainerQuiz>
-      <GitHubCorner projectUrl="https://github.com/ugocavalcanti" />
+      <GitHubCorner projectUrl="https://github.com/ugocavalcanti/javaquiz-nextjs" />
     </BackgroundQuiz>
   )
 }
