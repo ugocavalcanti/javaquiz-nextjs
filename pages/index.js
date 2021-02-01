@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useRouter} from "next/router";
+import { motion } from "framer-motion";
 
 import db from "../db.json"
 import BackgroundQuiz from "../src/components/BackgroundQuiz"
@@ -10,6 +11,9 @@ import Footer from '../src/components/Footer'
 import GitHubCorner from '../src/components/GitHubCorner'
 import IndexPage from '../src/components/IndexPage'
 import { useState } from 'react';
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
+import Link from '../src/components/Link';
 
 export default function Home() {
   const [ name, setName ] = useState('');
@@ -19,7 +23,6 @@ export default function Home() {
   function  handleSubmit(event) {
     event.preventDefault();
     router.push(`/quiz?name=${name}`)
-    console.log("Enviando submit");
   }
 
   function handleChange(event) {
@@ -31,27 +34,65 @@ export default function Home() {
       <IndexPage />
       <ContainerQuiz>
         <LogoQuiz />
-        <CardQuiz>
+        <CardQuiz 
+          as={motion.section}
+          transition={{ delay: 0, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1, y: "0"},
+            hidden: { opacity: 0, y: "100%"},
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <CardQuiz.Header>
-            <h1>Teste seu conhecimento</h1>
+            <h1>#JavaQuiz</h1>
           </CardQuiz.Header>
           <CardQuiz.Content>
             <p>Hora que testar tudo que você sabe sobre Java.</p>
             <form onSubmit={handleSubmit}>
-              <input type="text" placeholder="Preencha seu nome..." name="name" onChange={handleChange} />
-              <button type="submit" disabled={name.length === 0}>Jogar {name}</button>
+              <Input placeholder="Preencha seu nome..." onChange={handleChange} />
+              <Button type="submit" disabled={name.length === 0}>
+                Jogar {name} 
+              </Button>
             </form>
           </CardQuiz.Content>
         </CardQuiz>
-        <CardQuiz>
+        <CardQuiz
+          as={motion.section}
+          transition={{ delay: 0.25, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1},
+            hidden: { opacity: 0},
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <CardQuiz.Header>
             <h1>Quizes da Galera</h1>
           </CardQuiz.Header>
           <CardQuiz.Content>
-            <p>Lista de Quizes de outros usuários</p>
+            <ul>
+            {db.external.map((link, index) => {
+              const projectGitName = link.replace("https://", "").replace(".vercel.app/", "");
+              return (
+                <li key={index}>
+                  <CardQuiz.Topic as={Link} href={`http://localhost:3000/quiz/${projectGitName}`}>{projectGitName}</CardQuiz.Topic>
+                  </li>
+              )
+            })}
+            </ul>
           </CardQuiz.Content>
         </CardQuiz>
-        <Footer />
+        <Footer 
+          as={motion.footer}
+          transition={{ delay: 0.25, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1},
+            hidden: { opacity: 0},
+          }}
+          initial="hidden"
+          animate="show"
+        />
       </ContainerQuiz>
       <GitHubCorner projectUrl="https://github.com/ugocavalcanti/javaquiz-nextjs" />
     </BackgroundQuiz>

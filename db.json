@@ -5,29 +5,69 @@
     "questions": [
       {
         "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-        "title": "Como fazer um seletor por id via CSS?",
+        "title": "Qual dos comandos abaixo irá rodar um programa modular do Java?",
         "description": "Essa é pra aquecer",
-        "answer": 2,
+        "answer": 3,
         "alternatives": [
-          ".elemento",
-          "*elemento",
-          "#elemento",
-          "%elemento"
+          "java -cp modules mod/class",
+          "java -cp modules -m mod/class",
+          "java -m modules -p mod/class",
+          "java -p modules -m mod/class"
         ]
       },
       {
         "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
+        "title": "Qual opção abaixo é um membro de instância de uma classe válido?",
+        "description": "Essa é Java 11... ",
+        "answer": 2,
+        "alternatives": [
+           "var var = 3;",
+           "Var case = new Var();",
+           "void var() {}",
+           "String new = \"var\";"
+        ]
+      },
+      {
+        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+        "title": "Qual das expressões abaixo compila sem erro?",
+        "description": "Pegadinha ein....",
+        "answer": 1,
+        "alternatives": [
+           "int monday = 3 + 2.0;",
+           "double tuesday = 5_6L;",
+           "boolean wednesday = 1 > 2? !true;",
+           "long friday = 8.0L;"
+        ]
+      },
+      {
+        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+        "title": "Qual dos modificadores de métodos válidos abaixo não pode ser usados juntos a uma declaração de método?",
+        "description": "Saca essa!",
+        "answer": 1,
+        "alternatives": [
+           "null e final",
+           "abstract e private",
+           "private e final",
+           "protected e abstract"
+        ]
+      },
+      {
+        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+        "title": "Qual opção abaixo é uma sentença verdadeira?",
+        "description": "Chata essa viu",
         "answer": 0,
         "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
+           "O JDK contém um compilador.",
+           "A JVM contém um compilador.",
+           "O JDK está contido na JVM.",
+           "O comando java cria um arquivo contendo bytecode."
         ]
       }
     ],
     "external": [
-      ""
+      "https://aluraquiz-base.alura-challenges.vercel.app/",
+      "https://aluraquiz-css.omariosouto.vercel.app/",
+      "https://aluraquiz-devsoutinho.omariosouto.vercel.app/"
     ],
     "theme": {
       "colors": {
@@ -35,7 +75,7 @@
         "secondary": "#29b6f6",
         "mainBg": "#171B35",
         "contrastText": "#FFFFFF",
-        "wrong": "#FF5722",
+        "wrong": "#d90429",
         "success": "#4CAF50"
       },
       "borderRadius": "4px"
