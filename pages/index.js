@@ -33,7 +33,6 @@ export default function Home() {
     <BackgroundQuiz backgroundImage={db.bg}>
       <IndexPage />
       <ContainerQuiz>
-        <LogoQuiz />
         <CardQuiz 
           as={motion.section}
           transition={{ delay: 0, duration: 0.5 }}
@@ -48,7 +47,7 @@ export default function Home() {
             <h1>#JavaQuiz</h1>
           </CardQuiz.Header>
           <CardQuiz.Content>
-            <p>Hora que testar tudo que você sabe sobre Java.</p>
+            <p>Hora de testar tudo que você sabe sobre Java.</p>
             <form onSubmit={handleSubmit}>
               <Input placeholder="Preencha seu nome..." onChange={handleChange} />
               <Button type="submit" disabled={name.length === 0}>
